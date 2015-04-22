@@ -43,11 +43,28 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         var datastring: String = NSString(data: player1!, encoding:NSUTF8StringEncoding)!
         
 
+        var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        
+        leftSwipe.direction = .Left
+        rightSwipe.direction = .Right
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
+        
         
         gebruiker = logeduser()
         getJson()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "GCell")
     }
+    
+    func handleSwipes(sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .Right) {
+            self.performSegueWithIdentifier("backtogame", sender: self)
+
+        }
+    }
+    
     
     
     @IBOutlet weak var chattext: UITextField!
@@ -131,11 +148,17 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         var mid =  prefs.valueForKey("MATCHID") as NSString
         enemy =  prefs.valueForKey("ENEMY") as NSString
-        var get = "?id=\(mid)&id2='\(gebruiker)'&id3='\(chattext.text)'"
+        var escapedString : String = chattext.text.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        var get = "?id=\(mid)&id2='\(gebruiker)\'&id3='\(escapedString)'"
         var url = "http://athena.fhict.nl/users/i306956/chatbox2.php"
         url = url + get
         print(url)
+                //let newString = escapedString.stringByReplacingOccurrencesOfString("%20", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
+                
+                
         var data = NSData(contentsOfURL: NSURL(string: url)!)
+
+                
             if(messages == 1)
             {
                 var get = "?id='\(enemy)'&id2=\(mid)"
@@ -146,6 +169,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
         messages = messages - 1
+                getJson()
             }
             
         }
@@ -165,6 +189,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("GCell") as UITableViewCell
+        
         
         var maindata = (data[indexPath.row] as NSDictionary)
         var playerchat : String = maindata["player"] as String

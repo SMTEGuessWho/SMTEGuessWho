@@ -13,12 +13,14 @@
 		EAA118A7198A23CB00F443F1 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA118A6198A23CB00F443F1 /* LoginVC.swift */; };
 		EAA118A9198AAC7100F443F1 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA118A8198AAC7100F443F1 /* SignupVC.swift */; };
 		F511BED61AE29B9E000FDF93 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F511BED51AE29B9E000FDF93 /* ChatViewController.swift */; };
-		F511BED81AE2D3B2000FDF93 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F511BED71AE2D3B2000FDF93 /* Storyboard.storyboard */; };
 		F52787981ADEE548001107BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52787971ADEE548001107BE /* ViewController.swift */; };
 		F56077941AE02DC6001CE9BD /* colvwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56077931AE02DC6001CE9BD /* colvwCell.swift */; };
 		F576EB081ADFD0C10094E575 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F576EB071ADFD0C10094E575 /* HomeVC.swift */; };
-		F5812E6F1AE16B85001649C4 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5812E6E1AE16B85001649C4 /* StartViewController.swift */; };
 		F5812E711AE16C9B001649C4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5812E701AE16C9B001649C4 /* TableViewCell.swift */; };
+		F5B48C731AE55A3F0040A81C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5B48C721AE55A3F0040A81C /* Storyboard.storyboard */; };
+		F5B48C751AE56CA80040A81C /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B48C741AE56CA80040A81C /* StatsViewController.swift */; };
+		F5B775D41AE580320051EBFA /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B775D31AE580320051EBFA /* StartViewController.swift */; };
+		F5CA52161AE81A3500B3B810 /* SettViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CA52151AE81A3500B3B810 /* SettViewController.swift */; };
 		F5EAE7791AE2E5AE00431427 /* char1.png in Resources */ = {isa = PBXBuildFile; fileRef = F5EAE7601AE2E5AE00431427 /* char1.png */; };
 		F5EAE77A1AE2E5AE00431427 /* char1el.png in Resources */ = {isa = PBXBuildFile; fileRef = F5EAE7611AE2E5AE00431427 /* char1el.png */; };
 		F5EAE77B1AE2E5AE00431427 /* char2.png in Resources */ = {isa = PBXBuildFile; fileRef = F5EAE7621AE2E5AE00431427 /* char2.png */; };
@@ -67,12 +69,14 @@
 		EAA118A6198A23CB00F443F1 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		EAA118A8198AAC7100F443F1 /* SignupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 		F511BED51AE29B9E000FDF93 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChatViewController.swift; path = ../ChatViewController.swift; sourceTree = "<group>"; };
-		F511BED71AE2D3B2000FDF93 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		F52787971ADEE548001107BE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		F56077931AE02DC6001CE9BD /* colvwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = colvwCell.swift; path = ../colvwCell.swift; sourceTree = "<group>"; };
 		F576EB071ADFD0C10094E575 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		F5812E6E1AE16B85001649C4 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = ../StartViewController.swift; sourceTree = "<group>"; };
 		F5812E701AE16C9B001649C4 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = ../TableViewCell.swift; sourceTree = "<group>"; };
+		F5B48C721AE55A3F0040A81C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		F5B48C741AE56CA80040A81C /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsViewController.swift; path = ../StatsViewController.swift; sourceTree = "<group>"; };
+		F5B775D31AE580320051EBFA /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = ../StartViewController.swift; sourceTree = "<group>"; };
+		F5CA52151AE81A3500B3B810 /* SettViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettViewController.swift; sourceTree = "<group>"; };
 		F5EAE7601AE2E5AE00431427 /* char1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char1.png; path = charactersFinal/char1.png; sourceTree = SOURCE_ROOT; };
 		F5EAE7611AE2E5AE00431427 /* char1el.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char1el.png; path = charactersFinal/char1el.png; sourceTree = SOURCE_ROOT; };
 		F5EAE7621AE2E5AE00431427 /* char2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = char2.png; path = charactersFinal/char2.png; sourceTree = SOURCE_ROOT; };
@@ -139,18 +143,20 @@
 		EA62FD521989F6AC00469896 /* GuessWho */ = {
 			isa = PBXGroup;
 			children = (
+				F5B775D31AE580320051EBFA /* StartViewController.swift */,
 				F576EB071ADFD0C10094E575 /* HomeVC.swift */,
 				F5812E701AE16C9B001649C4 /* TableViewCell.swift */,
 				F52787971ADEE548001107BE /* ViewController.swift */,
 				F511BED51AE29B9E000FDF93 /* ChatViewController.swift */,
-				F511BED71AE2D3B2000FDF93 /* Storyboard.storyboard */,
-				F5812E6E1AE16B85001649C4 /* StartViewController.swift */,
+				F5B48C741AE56CA80040A81C /* StatsViewController.swift */,
 				EA62FD551989F6AC00469896 /* AppDelegate.swift */,
+				F5B48C721AE55A3F0040A81C /* Storyboard.storyboard */,
 				F56077931AE02DC6001CE9BD /* colvwCell.swift */,
 				EA62FD571989F6AC00469896 /* Images.xcassets */,
 				EA62FD531989F6AC00469896 /* Supporting Files */,
 				EAA118A6198A23CB00F443F1 /* LoginVC.swift */,
 				EAA118A8198AAC7100F443F1 /* SignupVC.swift */,
+				F5CA52151AE81A3500B3B810 /* SettViewController.swift */,
 			);
 			name = GuessWho;
 			path = SwiftLoginScreen;
@@ -307,13 +313,13 @@
 				F5EAE78F1AE2E5AE00431427 /* char12.png in Resources */,
 				F5EAE7871AE2E5AE00431427 /* char8.png in Resources */,
 				F5EAE78E1AE2E5AE00431427 /* char11el.png in Resources */,
+				F5B48C731AE55A3F0040A81C /* Storyboard.storyboard in Resources */,
 				F5EAE77D1AE2E5AE00431427 /* char3.png in Resources */,
 				F5EAE78B1AE2E5AE00431427 /* char10.png in Resources */,
 				F5EAE7801AE2E5AE00431427 /* char4el.png in Resources */,
 				F5EAE77A1AE2E5AE00431427 /* char1el.png in Resources */,
 				F5EAE7811AE2E5AE00431427 /* char5.png in Resources */,
 				F5EAE7821AE2E5AE00431427 /* char5el.png in Resources */,
-				F511BED81AE2D3B2000FDF93 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,12 +339,14 @@
 			files = (
 				F52787981ADEE548001107BE /* ViewController.swift in Sources */,
 				F5812E711AE16C9B001649C4 /* TableViewCell.swift in Sources */,
-				F5812E6F1AE16B85001649C4 /* StartViewController.swift in Sources */,
 				F576EB081ADFD0C10094E575 /* HomeVC.swift in Sources */,
 				EAA118A9198AAC7100F443F1 /* SignupVC.swift in Sources */,
+				F5CA52161AE81A3500B3B810 /* SettViewController.swift in Sources */,
 				EA62FD561989F6AC00469896 /* AppDelegate.swift in Sources */,
+				F5B775D41AE580320051EBFA /* StartViewController.swift in Sources */,
 				F56077941AE02DC6001CE9BD /* colvwCell.swift in Sources */,
 				F511BED61AE29B9E000FDF93 /* ChatViewController.swift in Sources */,
+				F5B48C751AE56CA80040A81C /* StatsViewController.swift in Sources */,
 				EAA118A7198A23CB00F443F1 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

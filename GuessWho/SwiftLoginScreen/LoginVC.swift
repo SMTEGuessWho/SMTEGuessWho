@@ -104,7 +104,7 @@ class LoginVC: UIViewController,UITextFieldDelegate {
                         prefs.setInteger(1, forKey: "ISLOGGEDIN")
                         prefs.synchronize()
                         
-                        self.dismissViewControllerAnimated(true, completion: nil)
+                        self.performSegueWithIdentifier("goto_start", sender: self)
                     } else {
                         var error_msg:NSString
                         
@@ -145,8 +145,6 @@ class LoginVC: UIViewController,UITextFieldDelegate {
         
     }
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
-        textField.resignFirstResponder()
-        return true
+    
     }
-}
+

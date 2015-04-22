@@ -22,21 +22,50 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gebruiker = logeduser()
-        getJson()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "GCell")
     }
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        let isLoggedIn:Int = prefs.integerForKey("ISLOGGEDIN") as Int
+        if (isLoggedIn != 1) {
+            self.performSegueWithIdentifier("goto_login", sender: self)
+        } else {
+            gebruiker = logeduser()
+            getJson()
+            tableView.reloadData()
+        }
+    }
+    
     
     func logeduser() -> String
     {
         var username:String = "none"
         let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        
         let isLoggedIn:Int = prefs.integerForKey("ISLOGGEDIN") as Int
         if (isLoggedIn == 1) {
             username =  prefs.valueForKey("USERNAME") as NSString
         }
         
         return username
+    }
+    
+    @IBAction func settings(sender: AnyObject) {
+        self.performSegueWithIdentifier("startsetting", sender: self)
+    }
+    
+
+    
+    @IBAction func stats(sender: AnyObject) {
+        var prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+        prefs.setObject(gebruiker, forKey: "USERNAME")
+        prefs.setInteger(1, forKey: "ISLOGGEDIN")
+        prefs.synchronize()
+        self.performSegueWithIdentifier("goto_stats", sender: self)
     }
     
     func getJson()
@@ -49,12 +78,8 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
-    @IBAction func backhome(sender: AnyObject) {
-                self.performSegueWithIdentifier("backto_home", sender: self)
-    }
-    
     func dataOfJson(Url: String) -> NSArray {
-        var get = "?id=\(logeduser())"
+        var get = "?id=\(gebruiker)"
         var url = Url
         url = url + get
         print(url)

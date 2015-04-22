@@ -25,10 +25,28 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         gebruiker = logeduser()
         
-      
+        var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        
+        leftSwipe.direction = .Left
+        rightSwipe.direction = .Right
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
 
  
     }
+    
+    func handleSwipes(sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .Left) {
+                    self.performSegueWithIdentifier("goto_chat", sender: self)
+                 }
+        
+        if (sender.direction == .Right) {
+            self.performSegueWithIdentifier("backtostart", sender: self)
+               }
+    }
+    
     
     override func viewDidAppear(animated: Bool) {
         let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
@@ -40,14 +58,21 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         print(url)
         var player1 = NSData(contentsOfURL: NSURL(string: url)!)
         var datastring: String = NSString(data: player1!, encoding:NSUTF8StringEncoding)!
-        
-        if(datastring == "{\"winner\":\"\(gebruiker)\"}"	)
+        var test = "[{\"winner\":\"\(gebruiker)\"}]"
+        if(datastring == test)
         {
             let alert = UIAlertView()
             alert.title = "Win !"
             alert.message = "Your enemy guessed wrong !"
             alert.addButtonWithTitle("OK")
             alert.show()
+            
+            var gettt = "?id='\(gebruiker)'"
+            var urltt = "http://athena.fhict.nl/users/i306956/winner3.php"
+            urltt = urltt + gettt
+            print(urltt)
+            var datat = NSData(contentsOfURL: NSURL(string: urltt)!)
+            
             
             var gett = "?id='NONE'&id2=\(mid)"
             var urlt = "http://athena.fhict.nl/users/i306956/turn1.php"
@@ -56,13 +81,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             var data = NSData(contentsOfURL: NSURL(string: urlt)!)
             self.performSegueWithIdentifier("backtostart", sender: self)
         }
-        if(datastring == "{\"winner\":\"\(enem)\"}")
+        if(datastring == "[{\"winner\":\"\(enem)\"}]")
         {
             let alert = UIAlertView()
             alert.title = "Lose !"
             alert.message = "Your enemy guessed right !"
             alert.addButtonWithTitle("OK")
             alert.show()
+            
+            var gettt = "?id='\(gebruiker)'"
+            var urltt = "http://athena.fhict.nl/users/i306956/lost1.php"
+            urltt = urltt + gettt
+            print(urltt)
+            var datat = NSData(contentsOfURL: NSURL(string: urltt)!)
+            
             
             var gett = "?id='NONE'&id2=\(mid)"
             var urlt = "http://athena.fhict.nl/users/i306956/turn1.php"
@@ -238,6 +270,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         urlt = urlt + gett
         print(urlt)
         var data = NSData(contentsOfURL: NSURL(string: urlt)!)
+
     }
     
     
@@ -276,11 +309,18 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 alert.show()
                 
                 winner(gebruiker, mid: mid)
-                var gett = "?id='\(enemy)'&id2=\(mid)"
-                var urlt = "http://athena.fhict.nl/users/i306956/turn1.php"
+                var gett = "?id='\(gebruiker)'"
+                var urlt = "http://athena.fhict.nl/users/i306956/winner3.php"
                 urlt = urlt + gett
                 print(urlt)
                 var data = NSData(contentsOfURL: NSURL(string: urlt)!)
+                
+                
+                var gettt = "?id='\(enemy)'&id2=\(mid)"
+                var urltt = "http://athena.fhict.nl/users/i306956/turn1.php"
+                urltt = urltt + gettt
+                print(urltt)
+                var datat = NSData(contentsOfURL: NSURL(string: urltt)!)
                 
             }
         else
@@ -290,6 +330,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 alert.message = "Your guess was wrong"
                 alert.addButtonWithTitle("OK")
                 alert.show()
+                
+                winner(gebruiker, mid: mid)
+                var gettt = "?id='\(gebruiker)'"
+                var urltt = "http://athena.fhict.nl/users/i306956/lost1.php"
+                urltt = urltt + gettt
+                print(urltt)
+                var datat = NSData(contentsOfURL: NSURL(string: urltt)!)
                 
                 winner(enemy, mid: mid)
                 var gett = "?id='\(enemy)'&id2=\(mid)"
@@ -325,6 +372,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             alert.show()
             
             winner(gebruiker, mid: mid)
+            var gettt = "?id='\(gebruiker)'"
+            var urltt = "http://athena.fhict.nl/users/i306956/winner3.php"
+            urltt = urltt + gettt
+            print(urltt)
+            var datat = NSData(contentsOfURL: NSURL(string: urltt)!)
+            
             var gett = "?id='\(enemy)'&id2=\(mid)"
             var urlt = "http://athena.fhict.nl/users/i306956/turn1.php"
             urlt = urlt + gett
@@ -342,6 +395,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             alert.show()
             
             winner(enemy, mid: mid)
+            var gettt = "?id='\(gebruiker)'"
+            var urltt = "http://athena.fhict.nl/users/i306956/lost1.php"
+            urltt = urltt + gettt
+            print(urltt)
+            var datat = NSData(contentsOfURL: NSURL(string: urltt)!)
+            
             var gett = "?id='\(enemy)'&id2=\(mid)"
             var urlt = "http://athena.fhict.nl/users/i306956/turn1.php"
             urlt = urlt + gett
