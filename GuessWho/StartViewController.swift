@@ -116,11 +116,18 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
                     }
                     else
                     {
-                    var get = "?id='\(username)'&id2='\(enteredText)'"
+                        if(enteredText == username)
+                        {
+                            
+                        }
+                        else
+                        {
+                        var get = "?id='\(username)'&id2='\(enteredText)'"
                         var url = "http://athena.fhict.nl/users/i306956/newmatch.php"
                         url = url + get
                         print(url)
                         var data = NSData(contentsOfURL: NSURL(string: url)!)
+                        }
                     }
                 }
         })
@@ -148,13 +155,13 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
         {
             var enemy: String = maindata["Player2"] as String
             var matchid: String = maindata["MatchId"] as String
-            cell.textLabel?.text = "\(enemy), \(matchid)"
+            cell.textLabel?.text = "\(enemy)"
         }
         else
         {
             var enemy: String = maindata["Player1"] as String
             var matchid: String = maindata["MatchId"] as String
-            cell.textLabel?.text = "\(enemy), \(matchid)"
+            cell.textLabel?.text = "\(enemy)"
         }
         
         return cell

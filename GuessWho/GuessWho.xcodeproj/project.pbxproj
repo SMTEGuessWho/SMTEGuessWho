@@ -16,7 +16,11 @@
 		F52787981ADEE548001107BE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F52787971ADEE548001107BE /* ViewController.swift */; };
 		F56077941AE02DC6001CE9BD /* colvwCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F56077931AE02DC6001CE9BD /* colvwCell.swift */; };
 		F576EB081ADFD0C10094E575 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F576EB071ADFD0C10094E575 /* HomeVC.swift */; };
+		F57C78851AE8E014001556AC /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F57C78841AE8E014001556AC /* Launch Screen.xib */; };
+		F57C78871AE8E084001556AC /* StartScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = F57C78861AE8E084001556AC /* StartScreen.png */; };
+		F57C78891AE90070001556AC /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = F57C78881AE90070001556AC /* Background.png */; };
 		F5812E711AE16C9B001649C4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5812E701AE16C9B001649C4 /* TableViewCell.swift */; };
+		F58379491AE90CDC006ABB1F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = F58379481AE90CDC006ABB1F /* icon.png */; };
 		F5B48C731AE55A3F0040A81C /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5B48C721AE55A3F0040A81C /* Storyboard.storyboard */; };
 		F5B48C751AE56CA80040A81C /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B48C741AE56CA80040A81C /* StatsViewController.swift */; };
 		F5B775D41AE580320051EBFA /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B775D31AE580320051EBFA /* StartViewController.swift */; };
@@ -72,7 +76,11 @@
 		F52787971ADEE548001107BE /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../ViewController.swift; sourceTree = "<group>"; };
 		F56077931AE02DC6001CE9BD /* colvwCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = colvwCell.swift; path = ../colvwCell.swift; sourceTree = "<group>"; };
 		F576EB071ADFD0C10094E575 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		F57C78841AE8E014001556AC /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "Launch Screen.xib"; path = "../Launch Screen.xib"; sourceTree = "<group>"; };
+		F57C78861AE8E084001556AC /* StartScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = StartScreen.png; path = charactersFinal/StartScreen.png; sourceTree = SOURCE_ROOT; };
+		F57C78881AE90070001556AC /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Background.png; path = charactersFinal/Background.png; sourceTree = SOURCE_ROOT; };
 		F5812E701AE16C9B001649C4 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewCell.swift; path = ../TableViewCell.swift; sourceTree = "<group>"; };
+		F58379481AE90CDC006ABB1F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = charactersFinal/icon.png; sourceTree = SOURCE_ROOT; };
 		F5B48C721AE55A3F0040A81C /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		F5B48C741AE56CA80040A81C /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatsViewController.swift; path = ../StatsViewController.swift; sourceTree = "<group>"; };
 		F5B775D31AE580320051EBFA /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StartViewController.swift; path = ../StartViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +153,7 @@
 			children = (
 				F5B775D31AE580320051EBFA /* StartViewController.swift */,
 				F576EB071ADFD0C10094E575 /* HomeVC.swift */,
+				F57C78841AE8E014001556AC /* Launch Screen.xib */,
 				F5812E701AE16C9B001649C4 /* TableViewCell.swift */,
 				F52787971ADEE548001107BE /* ViewController.swift */,
 				F511BED51AE29B9E000FDF93 /* ChatViewController.swift */,
@@ -165,6 +174,9 @@
 		EA62FD531989F6AC00469896 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				F58379481AE90CDC006ABB1F /* icon.png */,
+				F57C78881AE90070001556AC /* Background.png */,
+				F57C78861AE8E084001556AC /* StartScreen.png */,
 				F5EAE7601AE2E5AE00431427 /* char1.png */,
 				F5EAE7611AE2E5AE00431427 /* char1el.png */,
 				F5EAE7621AE2E5AE00431427 /* char2.png */,
@@ -298,8 +310,10 @@
 				F5EAE7881AE2E5AE00431427 /* char8el.png in Resources */,
 				F5EAE78A1AE2E5AE00431427 /* char9el.png in Resources */,
 				F5EAE7831AE2E5AE00431427 /* char6.png in Resources */,
+				F57C78851AE8E014001556AC /* Launch Screen.xib in Resources */,
 				F5EAE7911AE2E5AE00431427 /* finalguess.png in Resources */,
 				F5EAE7901AE2E5AE00431427 /* char12el.png in Resources */,
+				F58379491AE90CDC006ABB1F /* icon.png in Resources */,
 				F5EAE7841AE2E5AE00431427 /* char6el.png in Resources */,
 				F5EAE77F1AE2E5AE00431427 /* char4.png in Resources */,
 				F5EAE7861AE2E5AE00431427 /* char7el.png in Resources */,
@@ -312,12 +326,14 @@
 				F5EAE78C1AE2E5AE00431427 /* char10el.png in Resources */,
 				F5EAE78F1AE2E5AE00431427 /* char12.png in Resources */,
 				F5EAE7871AE2E5AE00431427 /* char8.png in Resources */,
+				F57C78871AE8E084001556AC /* StartScreen.png in Resources */,
 				F5EAE78E1AE2E5AE00431427 /* char11el.png in Resources */,
 				F5B48C731AE55A3F0040A81C /* Storyboard.storyboard in Resources */,
 				F5EAE77D1AE2E5AE00431427 /* char3.png in Resources */,
 				F5EAE78B1AE2E5AE00431427 /* char10.png in Resources */,
 				F5EAE7801AE2E5AE00431427 /* char4el.png in Resources */,
 				F5EAE77A1AE2E5AE00431427 /* char1el.png in Resources */,
+				F57C78891AE90070001556AC /* Background.png in Resources */,
 				F5EAE7811AE2E5AE00431427 /* char5.png in Resources */,
 				F5EAE7821AE2E5AE00431427 /* char5el.png in Resources */,
 			);

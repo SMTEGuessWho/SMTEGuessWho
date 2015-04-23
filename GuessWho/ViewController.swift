@@ -33,8 +33,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(rightSwipe)
-
- 
+        
     }
     
     func handleSwipes(sender:UISwipeGestureRecognizer) {

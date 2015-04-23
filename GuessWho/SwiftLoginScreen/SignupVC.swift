@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignupVC: UIViewController {
+class SignupVC: UIViewController,UITextFieldDelegate {
     
     @IBOutlet var txtUsername : UITextField!
     @IBOutlet var txtPassword : UITextField!
@@ -16,7 +16,9 @@ class SignupVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        txtUsername.delegate = self
+        txtPassword.delegate = self
+        txtConfirmPassword.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -38,6 +40,14 @@ class SignupVC: UIViewController {
     @IBAction func gotoLogin(sender : UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
     
     
     @IBAction func signupTapped(sender : UIButton) {
@@ -152,8 +162,4 @@ class SignupVC: UIViewController {
         
     }
     
-    func textFieldShouldReturn(textField: UITextField!) -> Bool {   //delegate method
-        textField.resignFirstResponder()
-        return true
-    }
 }

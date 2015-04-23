@@ -14,8 +14,18 @@ class LoginVC: UIViewController,UITextFieldDelegate {
     @IBOutlet var txtUsername : UITextField!
     @IBOutlet var txtPassword : UITextField!
     
+
+    
+    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        txtUsername.delegate = self
+        txtPassword.delegate = self
         
         // Do any additional setup after loading the view.
     }

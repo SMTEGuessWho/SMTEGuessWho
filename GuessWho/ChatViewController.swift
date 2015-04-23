@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate  {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -27,11 +27,16 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        chattext.delegate = self
+        
         
         let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
         var mid =  prefs.valueForKey("MATCHID") as NSString
         
-        self.chatmessages("http://athena.fhict.nl/users/i306956/chatbox3.php", matchid: mid )
+        gebruiker = logeduser()
+        
+        
+        self.chatmessages("http://athena.fhict.nl/users/i306956/chatbox3.php", matchid: mid, uname: gebruiker)
         
         
         var get = "?id=\(mid)"
@@ -53,7 +58,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         view.addGestureRecognizer(rightSwipe)
         
         
-        gebruiker = logeduser()
+        
         getJson()
         self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "GCell")
     }
@@ -66,11 +71,18 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
+    func textFieldShouldReturn(textField: UITextField!) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
+    
     
     @IBOutlet weak var chattext: UITextField!
     
     
-    func chatmessages(Url: String, matchid: String){
+    func chatmessages(Url: String, matchid: String, uname : String){
         var get = "?id=\(matchid)"
         var url = Url
         url = url + get
@@ -78,9 +90,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         var player1 = NSData(contentsOfURL: NSURL(string: url)!)
         
         var datastring: String = NSString(data: player1!, encoding:NSUTF8StringEncoding)!
-        var username : String = "asror"
-        
-        if("{\"player\":\"\(username)\"}" == datastring)
+        if("{\"player\":\"\(uname)\"}" == datastring)
         {
             messages = 1
         }
@@ -194,13 +204,14 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         var maindata = (data[indexPath.row] as NSDictionary)
         var playerchat : String = maindata["player"] as String
         var meschat : String = maindata["message"] as String
-        if (playerchat == gebruiker)
+        if (playerchat != gebruiker)
         {
-            cell.textLabel?.textAlignment = NSTextAlignment.Right
+            cell.textLabel?.textAlignment = NSTextAlignment.Left
             cell.textLabel?.text = "\(playerchat) : " + "\(meschat)"  
         }
         else
         {
+            cell.textLabel?.textAlignment = NSTextAlignment.Right
             cell.textLabel?.text = "\(playerchat) : " + "\(meschat)"
         }
         
