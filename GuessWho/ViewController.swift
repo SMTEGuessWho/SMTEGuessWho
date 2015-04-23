@@ -54,7 +54,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         var get = "?id=\(mid)"
         var url = "http://athena.fhict.nl/users/i306956/winner2.php"
         url = url + get
-        print(url)
         var player1 = NSData(contentsOfURL: NSURL(string: url)!)
         var datastring: String = NSString(data: player1!, encoding:NSUTF8StringEncoding)!
         var test = "[{\"winner\":\"\(gebruiker)\"}]"
@@ -69,14 +68,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             var gettt = "?id='\(gebruiker)'"
             var urltt = "http://athena.fhict.nl/users/i306956/winner3.php"
             urltt = urltt + gettt
-            print(urltt)
             var datat = NSData(contentsOfURL: NSURL(string: urltt)!)
             
             
             var gett = "?id='NONE'&id2=\(mid)"
             var urlt = "http://athena.fhict.nl/users/i306956/turn1.php"
             urlt = urlt + gett
-            print(urlt)
             var data = NSData(contentsOfURL: NSURL(string: urlt)!)
             self.performSegueWithIdentifier("backtostart", sender: self)
         }
@@ -91,14 +88,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             var gettt = "?id='\(gebruiker)'"
             var urltt = "http://athena.fhict.nl/users/i306956/lost1.php"
             urltt = urltt + gettt
-            print(urltt)
             var datat = NSData(contentsOfURL: NSURL(string: urltt)!)
             
             
             var gett = "?id='NONE'&id2=\(mid)"
             var urlt = "http://athena.fhict.nl/users/i306956/turn1.php"
             urlt = urlt + gett
-            print(urlt)
             var data = NSData(contentsOfURL: NSURL(string: urlt)!)
             self.performSegueWithIdentifier("backtostart", sender: self)
         }
@@ -147,7 +142,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         var get = "?id=\(mid)"
         var url = "http://athena.fhict.nl/users/i306956/player1.php"
         url = url + get
-        print(url)
         var data = NSData(contentsOfURL: NSURL(string: url)!)
         
         var datastring: String = NSString(data: data!, encoding:NSUTF8StringEncoding)!
@@ -162,7 +156,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             var get = "?id=\(mid)"
             var url = "http://athena.fhict.nl/users/i306956/finalchar1.php"
             url = url + get
-            print(url)
             var data = NSData(contentsOfURL: NSURL(string: url)!)
             
             var datastring: String = "";
@@ -178,7 +171,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             var get = "?id=\(mid)"
             var url = "http://athena.fhict.nl/users/i306956/finalchar2.php"
             url = url + get
-            print(url)
             var data = NSData(contentsOfURL: NSURL(string: url)!)
             
             var datastring: String = "";
@@ -267,7 +259,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         var gett = "?id='\(name)'&id2=\(mid)"
         var urlt = "http://athena.fhict.nl/users/i306956/winner1.php"
         urlt = urlt + gett
-        print(urlt)
         var data = NSData(contentsOfURL: NSURL(string: urlt)!)
 
     }
@@ -277,7 +268,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var get = "?id=\(matchid)"
     var url = Url
     url = url + get
-    print(url)
     var player1 = NSData(contentsOfURL: NSURL(string: url)!)
     
     var datastring: String = NSString(data: player1!, encoding:NSUTF8StringEncoding)!
@@ -289,7 +279,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         var get = "?id=\(matchid)"
         var url = "http://athena.fhict.nl/users/i306956/finalchar2.php"
         url = url + get
-        print(url)
         var player1g = NSData(contentsOfURL: NSURL(string: url)!)
         var datastringg: String = NSString(data: player1g!, encoding:NSUTF8StringEncoding)!
         
@@ -334,14 +323,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 var gettt = "?id='\(gebruiker)'"
                 var urltt = "http://athena.fhict.nl/users/i306956/lost1.php"
                 urltt = urltt + gettt
-                print(urltt)
                 var datat = NSData(contentsOfURL: NSURL(string: urltt)!)
                 
                 winner(enemy, mid: mid)
                 var gett = "?id='\(enemy)'&id2=\(mid)"
                 var urlt = "http://athena.fhict.nl/users/i306956/turn1.php"
                 urlt = urlt + gett
-                print(urlt)
                 var data = NSData(contentsOfURL: NSURL(string: urlt)!)
             }
         self.performSegueWithIdentifier("backtostart", sender: self)
@@ -352,7 +339,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         var get = "?id=\(matchid)"
         var url = "http://athena.fhict.nl/users/i306956/finalchar1.php"
         url = url + get
-        print(url)
         var player1 = NSData(contentsOfURL: NSURL(string: url)!)
         var datastring: String = NSString(data: player1!, encoding:NSUTF8StringEncoding)!
         
@@ -374,13 +360,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             var gettt = "?id='\(gebruiker)'"
             var urltt = "http://athena.fhict.nl/users/i306956/winner3.php"
             urltt = urltt + gettt
-            print(urltt)
             var datat = NSData(contentsOfURL: NSURL(string: urltt)!)
             
             var gett = "?id='\(enemy)'&id2=\(mid)"
             var urlt = "http://athena.fhict.nl/users/i306956/turn1.php"
             urlt = urlt + gett
-            print(urlt)
             var data = NSData(contentsOfURL: NSURL(string: urlt)!)
             
             
@@ -397,13 +381,11 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             var gettt = "?id='\(gebruiker)'"
             var urltt = "http://athena.fhict.nl/users/i306956/lost1.php"
             urltt = urltt + gettt
-            print(urltt)
             var datat = NSData(contentsOfURL: NSURL(string: urltt)!)
             
             var gett = "?id='\(enemy)'&id2=\(mid)"
             var urlt = "http://athena.fhict.nl/users/i306956/turn1.php"
             urlt = urlt + gett
-            print(urlt)
             var data = NSData(contentsOfURL: NSURL(string: urlt)!)
             
         }
@@ -418,7 +400,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         var get = "?id=\(matchid)"
         var url = Url
         url = url + get
-        print(url)
         var player1 = NSData(contentsOfURL: NSURL(string: url)!)
 
         var datastring: String = NSString(data: player1!, encoding:NSUTF8StringEncoding)!
@@ -429,7 +410,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             var get = "?id='\(username)'&id2=\(matchid)&id3=\(char)"
             var url = "http://athena.fhict.nl/users/i306956/charpick1.php"
             url = url + get
-            print(url)
             var data = NSData(contentsOfURL: NSURL(string: url)!)
         }
         else
@@ -438,7 +418,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             var get = "?id='\(username)'&id2=\(matchid)&id3=\(char)"
             var url = "http://athena.fhict.nl/users/i306956/charpick2.php"
             url = url + get
-            print(url)
             var data = NSData(contentsOfURL: NSURL(string: url)!)
         }
 

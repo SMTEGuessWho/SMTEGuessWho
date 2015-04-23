@@ -17,6 +17,7 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     @IBOutlet var tableView: UITableView!
     var data: NSArray = []
+
     
     var gebruiker :String = " "
     
@@ -127,18 +128,64 @@ class StartViewController: UIViewController, UITableViewDelegate, UITableViewDat
                         url = url + get
                         print(url)
                         var data = NSData(contentsOfURL: NSURL(string: url)!)
+                          
                         }
                     }
                 }
         })
         
+        let action2 = UIAlertAction(title: "Random",
+            style: UIAlertActionStyle.Default,
+            handler: {[weak self]
+                (paramAction:UIAlertAction!) in
+                if let textFields = alertController?.textFields{
+                    let theTextFields = textFields as [UITextField]
+                    let enteredText = theTextFields[0].text
+                    let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
+
+                    
+                    var rada : NSArray = []
+                    var get = "?id=\(username)"
+                    var url = "http://athena.fhict.nl/users/i306956/random1.php"
+                    url = url + get
+                    print(url)
+                    var data : NSData = NSData(contentsOfURL: NSURL(string: url)!)!
+                    
+                    // Create another error optional
+                    var jsonerror:NSError?
+                    // We don't know the type of object we'll receive back so use AnyObject
+                    let swiftObject:AnyObject = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error:&jsonerror)!
+                    // JSONObjectWithData returns AnyObject so the first thing to do is to downcast this to a known type
+                    if let nsDictionaryObject = swiftObject as? NSDictionary {
+                        if let swiftDictionary = nsDictionaryObject as Dictionary? {
+                            var enemy : String = swiftDictionary["username"] as String
+                            var get = "?id='\(username)'&id2='\(enemy)'"
+                            var url = "http://athena.fhict.nl/users/i306956/newmatch.php"
+                            url = url + get
+                            print(url)
+                            var data = NSData(contentsOfURL: NSURL(string: url)!)
+                        }
+                    }
+                    else if let nsArrayObject = swiftObject as? NSArray {
+                        if let swiftArray = nsArrayObject as Array? {
+                            println(swiftArray)
+                        }
+                    }
+                    
+                }
+        })
+        
         
         alertController?.addAction(action)
+        alertController?.addAction(action2)
         self.presentViewController(alertController!,
             animated: true,
             completion: nil)
 
     }
+    
+    
+    
     
 
     
